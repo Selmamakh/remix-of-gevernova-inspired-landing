@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { ArrowRight, Search, Play, MessageCircle, X, Send, ChevronDown, Check } from "lucide-react";
+import { ArrowRight, Search, Play, MessageCircle, X, Send, ChevronDown, Check, HelpCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import careersHero from "@/assets/careers-hero-bg.jpg";
@@ -57,6 +57,7 @@ const jobListings = [
 
 const Careers = () => {
   const [chatOpen, setChatOpen] = useState(false);
+  const [chatTeaserDismissed, setChatTeaserDismissed] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [showTermsDetail, setShowTermsDetail] = useState(false);
   const [chatMessages, setChatMessages] = useState<{role: "bot" | "user"; text: string}[]>([]);
@@ -318,15 +319,49 @@ const Careers = () => {
 
       <Footer />
 
-      {/* Geni Chatbot Widget */}
+      {/* Geni Chatbot Entry */}
       {!chatOpen && (
-        <button
-          onClick={() => setChatOpen(true)}
-          className="fixed bottom-6 right-6 z-50 bg-white rounded-full pl-5 pr-1 py-1 shadow-[0_2px_12px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.16)] transition-all flex items-center gap-3 border border-border/50"
-        >
-          <span className="text-[15px] text-muted-foreground leading-snug whitespace-nowrap text-left">Chat with our<br />Recruiting Assistant</span>
-          <img src={geatLogoChatAvatar} alt="Geni" className="w-[52px] h-[52px] rounded-full object-cover shrink-0" />
-        </button>
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          {!chatTeaserDismissed && (
+            <div className="flex flex-col items-end gap-2.5 max-w-[calc(100vw-3rem)]">
+              <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.12)] pl-5 pr-3 py-3 flex items-center gap-3 border border-border/40">
+                <span className="text-[15px] text-foreground font-medium whitespace-nowrap">
+                  Hi! Are you looking for a job?
+                </span>
+                <button
+                  onClick={() => setChatTeaserDismissed(true)}
+                  aria-label="Dismiss"
+                  className="text-muted-foreground hover:text-foreground transition-colors shrink-0"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <div className="flex gap-2.5 flex-wrap justify-end">
+                <button
+                  onClick={() => setChatOpen(true)}
+                  className="bg-white rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.10)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.14)] px-5 py-2.5 flex items-center gap-2 text-sm font-medium text-foreground border border-border/40 transition-all"
+                >
+                  <Search className="w-4 h-4" />
+                  Find a job
+                </button>
+                <button
+                  onClick={() => setChatOpen(true)}
+                  className="bg-white rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.10)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.14)] px-5 py-2.5 flex items-center gap-2 text-sm font-medium text-foreground border border-border/40 transition-all"
+                >
+                  <HelpCircle className="w-4 h-4" />
+                  Ask a question
+                </button>
+              </div>
+            </div>
+          )}
+          <button
+            onClick={() => setChatOpen(true)}
+            aria-label="Open chat with Geni"
+            className="bg-primary hover:brightness-110 w-14 h-14 rounded-full shadow-[0_6px_20px_rgba(244,130,31,0.4)] hover:shadow-[0_8px_28px_rgba(244,130,31,0.5)] flex items-center justify-center transition-all"
+          >
+            <MessageCircle className="w-6 h-6 text-primary-foreground" fill="currentColor" />
+          </button>
+        </div>
       )}
 
       {/* Terms Overlay - separate from chat */}
