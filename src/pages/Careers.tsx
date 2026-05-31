@@ -57,6 +57,7 @@ const jobListings = [
 
 const Careers = () => {
   const [chatOpen, setChatOpen] = useState(false);
+  const [chatEntryVisible, setChatEntryVisible] = useState(false);
   const [chatTeaserDismissed, setChatTeaserDismissed] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [showTermsDetail, setShowTermsDetail] = useState(false);
@@ -67,6 +68,11 @@ const Careers = () => {
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [chatMessages]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setChatEntryVisible(true), 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleAcceptTerms = () => {
     setTermsAccepted(true);
@@ -320,8 +326,8 @@ const Careers = () => {
       <Footer />
 
       {/* Geni Chatbot Entry */}
-      {!chatOpen && (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500">
+      {!chatOpen && chatEntryVisible && (
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 animate-fade-in-up">
           {!chatTeaserDismissed && (
             <div className="flex flex-col items-end gap-2.5 max-w-[calc(100vw-3rem)]">
               <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.12)] pl-5 pr-3 py-3 flex items-center gap-3 border border-border/40">
@@ -410,7 +416,7 @@ const Careers = () => {
       )}
 
       {chatOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] bg-background border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden" style={{ maxHeight: "min(600px, calc(100vh - 3rem))" }}>
+        <div className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] bg-background border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in-up" style={{ maxHeight: "min(600px, calc(100vh - 3rem))" }}>
           {/* Header */}
           <div className="bg-white text-foreground px-5 py-3 flex items-center justify-between shrink-0 border-b border-border">
             <div className="flex items-center gap-2">
