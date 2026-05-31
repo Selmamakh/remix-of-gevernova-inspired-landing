@@ -69,6 +69,11 @@ const Careers = () => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [chatMessages]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setChatEntryVisible(true), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleAcceptTerms = () => {
     setTermsAccepted(true);
     setShowTermsDetail(false);
