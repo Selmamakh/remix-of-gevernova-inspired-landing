@@ -57,6 +57,7 @@ const jobListings = [
 
 const Careers = () => {
   const [chatOpen, setChatOpen] = useState(false);
+  const [chatEntryVisible, setChatEntryVisible] = useState(false);
   const [chatTeaserDismissed, setChatTeaserDismissed] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [showTermsDetail, setShowTermsDetail] = useState(false);
