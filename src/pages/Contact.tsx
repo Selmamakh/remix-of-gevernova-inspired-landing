@@ -373,10 +373,6 @@ const Contact = () => {
                   body="For employment verifications and other human resources questions, please contact our HR department."
                 />
                 <LinkBlock
-                  title="Supplier relations"
-                  body="For supplier relations and procurement inquiries, please reach out to our supply chain team."
-                />
-                <LinkBlock
                   title="Media contacts"
                   body="For media inquiries, interviews and press resources, please contact our communications team."
                 />
