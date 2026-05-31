@@ -57,7 +57,7 @@ const navItems: NavItem[] = [
   },
   { label: "News", href: "#news" },
   { label: "Careers", href: "/careers" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = ({ showSearchJobs = false }: { showSearchJobs?: boolean }) => {
