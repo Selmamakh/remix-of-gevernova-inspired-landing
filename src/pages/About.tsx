@@ -129,10 +129,10 @@ const About = () => {
       {/* GATEWAY + TIMELINE */}
       <section className="relative py-20">
         <div
-          className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: `url(${turbineBg})`, backgroundSize: "cover" }}
+          className="absolute inset-0 opacity-25 grayscale"
+          style={{ backgroundImage: `url(${gatewayTeamAsset.url})`, backgroundSize: "cover", backgroundPosition: "center" }}
         />
-        <div className="absolute inset-0 bg-geat-dark/85" />
+        <div className="absolute inset-0 bg-geat-dark/80" />
         <div className="relative z-10 section-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
