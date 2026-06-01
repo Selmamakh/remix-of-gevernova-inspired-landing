@@ -6,6 +6,7 @@ import storySide1 from "@/assets/story-2.jpg";
 import storySide2 from "@/assets/story-3.jpg";
 import gatewayImg from "@/assets/who-we-are.jpg";
 import turbineBg from "@/assets/turbine-background.png";
+import heroHallAsset from "@/assets/about-hero-hall.jpeg.asset.json";
 
 const stats = [
   { value: "12+", label: "Years of Operation" },
@@ -42,14 +43,14 @@ const About = () => {
       {/* HERO */}
       <section className="relative pt-28 pb-20 overflow-hidden bg-geat-dark">
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url(${turbineBg})`,
+            backgroundImage: `url(${heroHallAsset.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-geat-dark/40 via-geat-dark/70 to-geat-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-geat-dark/70 via-geat-dark/75 to-geat-dark" />
         <div className="relative z-10 section-container text-center">
           <h1 className="font-heading font-bold text-5xl lg:text-7xl text-primary-foreground mb-4">
             About Us
@@ -217,28 +218,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* PARTNERS */}
-      <section className="py-20 bg-geat-dark border-t border-primary-foreground/5">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold tracking-[0.3em] text-primary-foreground/60 uppercase mb-3">Strategic Partners</p>
-            <h2 className="font-heading font-bold text-3xl lg:text-5xl">
-              Trusted Industrial <span className="text-geat-orange">Brand</span> Associates
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            {partners.map((p) => (
-              <div
-                key={p}
-                className="border border-primary-foreground/15 rounded-lg py-6 px-4 flex items-center justify-center text-center hover:border-geat-orange hover:bg-primary-foreground/5 transition-all"
-              >
-                <span className="font-heading font-bold text-sm tracking-wider text-primary-foreground/90">{p}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>
