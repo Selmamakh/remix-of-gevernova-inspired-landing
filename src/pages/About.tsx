@@ -43,14 +43,14 @@ const About = () => {
       {/* HERO */}
       <section className="relative pt-28 pb-20 overflow-hidden bg-geat-dark">
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url(${turbineBg})`,
+            backgroundImage: `url(${heroHallAsset.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-geat-dark/40 via-geat-dark/70 to-geat-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-geat-dark/70 via-geat-dark/75 to-geat-dark" />
         <div className="relative z-10 section-container text-center">
           <h1 className="font-heading font-bold text-5xl lg:text-7xl text-primary-foreground mb-4">
             About Us
