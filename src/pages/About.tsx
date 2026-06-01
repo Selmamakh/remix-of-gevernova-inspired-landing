@@ -7,6 +7,7 @@ import storySide2 from "@/assets/story-3.jpg";
 import gatewayImg from "@/assets/who-we-are.jpg";
 import turbineBg from "@/assets/turbine-background.png";
 import heroHallAsset from "@/assets/about-hero-hall.jpeg.asset.json";
+import gatewayTeamAsset from "@/assets/gateway-team.jpeg.asset.json";
 
 const stats = [
   { value: "12+", label: "Years of Operation" },
@@ -128,10 +129,10 @@ const About = () => {
       {/* GATEWAY + TIMELINE */}
       <section className="relative py-20">
         <div
-          className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: `url(${turbineBg})`, backgroundSize: "cover" }}
+          className="absolute inset-0 opacity-25 grayscale"
+          style={{ backgroundImage: `url(${gatewayTeamAsset.url})`, backgroundSize: "cover", backgroundPosition: "center" }}
         />
-        <div className="absolute inset-0 bg-geat-dark/85" />
+        <div className="absolute inset-0 bg-geat-dark/80" />
         <div className="relative z-10 section-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -169,7 +170,7 @@ const About = () => {
 
             <div className="relative">
               <div className="rounded-2xl overflow-hidden grayscale">
-                <img src={gatewayImg} alt="GEAT facility" className="w-full h-[500px] object-cover" />
+                <img src={gatewayTeamAsset.url} alt="GEAT team in front of turbine" className="w-full h-[500px] object-cover" />
               </div>
               <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-geat-orange flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
                 <ArrowUpRight className="w-8 h-8 text-primary-foreground" />
