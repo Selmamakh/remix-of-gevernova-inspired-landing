@@ -6,6 +6,7 @@ import storySide1 from "@/assets/story-2.jpg";
 import storySide2 from "@/assets/story-3.jpg";
 import gatewayImg from "@/assets/who-we-are.jpg";
 import turbineBg from "@/assets/turbine-background.png";
+import heroHallAsset from "@/assets/about-hero-hall.jpeg.asset.json";
 
 const stats = [
   { value: "12+", label: "Years of Operation" },
