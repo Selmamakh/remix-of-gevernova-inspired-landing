@@ -170,7 +170,7 @@ const About = () => {
 
             <div className="relative">
               <div className="rounded-2xl overflow-hidden grayscale">
-                <img src={gatewayImg} alt="GEAT facility" className="w-full h-[500px] object-cover" />
+                <img src={gatewayTeamAsset.url} alt="GEAT team in front of turbine" className="w-full h-[500px] object-cover" />
               </div>
               <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-geat-orange flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
                 <ArrowUpRight className="w-8 h-8 text-primary-foreground" />
